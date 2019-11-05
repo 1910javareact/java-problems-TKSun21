@@ -13,7 +13,13 @@ public class EvaluationService {
 	 * @param string
 	 * @return
 	 */
+	
 	public String reverse(String string) {
+		int e = string.length();
+		char[] someWord = new char [e];
+		for (int i = 0; i < string.length(); i++) {
+			someWord[--e] = string.charAt(i);
+		}
 		
 		return "";
 	}
