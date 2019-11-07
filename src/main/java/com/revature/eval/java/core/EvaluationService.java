@@ -14,12 +14,7 @@ public class EvaluationService {
 	 * @return
 	 */
 	
-	public String reverse(String string) {
-		int e = string.length();
-		char[] someWord = new char [e];
-		for (int i = 0; i < string.length(); i++) {
-			someWord[--e] = string.charAt(i);
-		}
+		public String reverse(String string) {
 		
 		String word = "";
 		
@@ -147,11 +142,47 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
-		int word = 0;
 		
+        int score = 0;
+
+
+        for (int i = 0; i < string.length(); i++) {
+        	char aLetter = string.toUpperCase().charAt(i);
 		
-		
-		return 0;
+            switch (aLetter){
+                case 'G':
+                case 'D': score += 2;
+                break;
+                
+                case 'B':
+                case 'C':
+                case 'M':
+                case 'P': score += 3;
+                break;
+                
+                case 'F':
+                case 'H':
+                case 'V':
+                case 'W':
+                case 'Y': score += 4;
+                break;
+                
+                case 'K': score += 5;
+                break;
+                
+                case 'J':
+                case 'X': score += 8;
+                break;
+                
+                case 'Q':
+                case 'Z': score += 10;
+                break;
+                
+                default: score += 1;
+            }
+        }
+        
+		return score;
 	}
 
 	/**
