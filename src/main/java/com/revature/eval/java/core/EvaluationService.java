@@ -218,7 +218,21 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		
+		string=string.replaceAll("\\s+" ,""); //remove white space
+		string=string.replaceAll("[a-zA-Z]", ""); //removes all letters
+		string=string.replaceAll("\\p{Punct}" , "");//removes all punctuation
+		
+		
+		//removes all digits that is not exact 10 digits
+		if((string.length() > 10) || (string.length() < 9)) {
+			string=string.replaceAll("\\p{Digit}", "");
+			throw new IllegalArgumentException();
+		}
+		
+		System.out.println(string);
+		
+		return string;
 	}
 
 	/**
@@ -232,6 +246,9 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
+		
+		
+		
 		return null;
 	}
 
@@ -603,6 +620,10 @@ public class EvaluationService {
 	 */
 	public int solveWordProblem(String string) {
 		// TODO Write an implementation for this method declaration
+		
+//		string = "string";
+//		units = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",]
+//		
 		return 0;
 	}
 
