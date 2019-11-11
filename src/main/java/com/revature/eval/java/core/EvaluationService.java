@@ -216,7 +216,18 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		
+		string=string.replaceAll("\\s+" ,""); //remove white space
+		string=string.replaceAll("[a-zA-Z]", ""); //removes all letters
+		string=string.replaceAll("\\p{Punct}" , "");//removes all punctuation
+		
+		
+		//removes all digits that is not exact 10 digits
+		if((string.length() > 10) || (string.length() < 9)) {
+			string=string.replaceAll("\\p{Digit}", "");
+			throw new IllegalArgumentException();
+		}
+		return string;
 	}
 
 	/**
