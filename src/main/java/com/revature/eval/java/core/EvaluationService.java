@@ -1,6 +1,7 @@
 package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -230,7 +231,7 @@ public class EvaluationService {
 			throw new IllegalArgumentException();
 		}
 		
-		System.out.println(string);
+//		System.out.println(string);
 		
 		return string;
 	}
@@ -247,9 +248,33 @@ public class EvaluationService {
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
 		
+		HashMap <String, Integer> map = new HashMap <String, Integer> ();
 		
+		string = string.replaceAll("," , " ");
+		string = string.replaceAll("\n" , " ");
 		
-		return null;
+		//handlesExpandedLists, when it takes out the \n handles, the " +" which was concatenating
+		//is handled with this replaceAll method
+		string = string.replaceAll(" +", " ");
+		
+		int theCounts = 0;
+		
+		String [] wordArray = string.split(" ");
+		
+		for (int i = 0; i < wordArray.length; i++) {
+			String ele = wordArray[i];
+			
+			if(map.containsKey(ele)) {
+				
+				theCounts = map.get(ele) + 1;
+				map.put(ele, theCounts);
+			}
+			else if(!map.containsKey(ele)) {
+				map.put(ele, 1);
+			}
+		}
+		
+		return map;
 	}
 
 	/**
@@ -621,9 +646,10 @@ public class EvaluationService {
 	public int solveWordProblem(String string) {
 		// TODO Write an implementation for this method declaration
 		
-//		string = "string";
-//		units = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",]
+//		HashMap <String, Integer> numbers = new HashMap <String, Integer>();
 //		
+//		String units = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",]
+		
 		return 0;
 	}
 
