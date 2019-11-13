@@ -15,7 +15,11 @@ public class EvaluationService {
 	 * @return
 	 */
 	
+<<<<<<< HEAD
 		public String reverse(String string) {
+=======
+	public String reverse(String string) {
+>>>>>>> ac60a73c2716025ca495e006661386a868c4dacc
 		
 		String word = "";
 		
@@ -146,7 +150,10 @@ public class EvaluationService {
 		
         int score = 0;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac60a73c2716025ca495e006661386a868c4dacc
         for (int i = 0; i < string.length(); i++) {
         	char aLetter = string.toUpperCase().charAt(i);
 		
@@ -182,7 +189,10 @@ public class EvaluationService {
                 default: score += 1;
             }
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> ac60a73c2716025ca495e006661386a868c4dacc
 		return score;
 	}
 
@@ -230,9 +240,12 @@ public class EvaluationService {
 			string=string.replaceAll("\\p{Digit}", "");
 			throw new IllegalArgumentException();
 		}
+<<<<<<< HEAD
 		
 //		System.out.println(string);
 		
+=======
+>>>>>>> ac60a73c2716025ca495e006661386a868c4dacc
 		return string;
 	}
 
